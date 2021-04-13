@@ -6,6 +6,7 @@ public interface FetchUserHttpEndpointSync {
     enum EndpointStatus {
         SUCCESS,
         AUTH_ERROR,
+        SERVER_ERROR,
         GENERAL_ERROR
     }
 
