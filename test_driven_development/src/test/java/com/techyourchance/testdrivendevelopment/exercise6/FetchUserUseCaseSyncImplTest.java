@@ -8,15 +8,18 @@ import com.techyourchance.testdrivendevelopment.exercise6.users.UsersCache;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.*;
 
+@RunWith(MockitoJUnitRunner.class)
 public class FetchUserUseCaseSyncImplTest {
 
     private static final String USER_ID = "userId";
@@ -29,8 +32,6 @@ public class FetchUserUseCaseSyncImplTest {
 
     @Before
     public void setUp() throws Exception {
-        fetchUserHttpEndpointSyncMock = Mockito.mock(FetchUserHttpEndpointSync.class);
-        usersCacheMock = Mockito.mock(UsersCache.class);
         sut = new FetchUserUseCaseSyncImpl(fetchUserHttpEndpointSyncMock, usersCacheMock);
         success();
     }

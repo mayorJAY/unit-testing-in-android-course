@@ -29,7 +29,7 @@ public class FetchUserUseCaseSyncImpl implements FetchUserUseCaseSync {
 
         if (isSuccessful(endpointResult)) {
             usersCache.cacheUser(new User(endpointResult.getUserId(), endpointResult.getUsername()));
-            return new UseCaseResult(Status.SUCCESS, usersCache.getUser(userId));
+            return new UseCaseResult(Status.SUCCESS, new User(endpointResult.getUserId(), endpointResult.getUsername()));
         } else {
             return new UseCaseResult(Status.FAILURE, null);
         }
