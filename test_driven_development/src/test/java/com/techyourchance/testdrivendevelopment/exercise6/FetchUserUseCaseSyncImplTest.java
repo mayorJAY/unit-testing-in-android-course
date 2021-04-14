@@ -140,7 +140,7 @@ public class FetchUserUseCaseSyncImplTest {
         Mockito.verify(usersCacheMock, Mockito.atMost(1)).getUser(USER_ID);
     }
 
-    //================================= HELPER METHODS ===========================================//
+    //=================================== HELPER METHODS =========================================//
 
     private void success() throws NetworkErrorException {
         Mockito.when(fetchUserHttpEndpointSyncMock.fetchUserSync(USER_ID))
